@@ -212,6 +212,33 @@
 
         </div>
     </section><!-- End Services Section -->
+        <div class="container">
+
+<div class="row">
+
+@foreach($posts as $post)
+
+      <!-- Projects -->
+  <div class="col-lg-4 col-sm-6 mb-4">
+  
+    <div class="card h-100">
+      <a href="/post/{{$post->slug}}">
+          <img class="card-img-top" src="{{Voyager::image($post->image)}}" style="bakground-size:700px 400px; alt="">
+        </a>
+       <div class="card-body">
+         <h4 class="card-title" style="position:center">{{$post->title}}</h4>
+         <a> posted-on {{$post->created_at->format('d M Y')}}</a>
+         <a class="btn btn-primary" href="/post/{{$post->slug}}">Selanjutnya</a>
+       </div>
+    </div>
+  </div>
+   
+    <!-- /.row -->
+
+@endforeach
+</div>
+</div>
+
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
