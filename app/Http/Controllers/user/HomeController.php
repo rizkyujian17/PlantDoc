@@ -9,6 +9,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('users.pages.home');
+           $posts = Post::all();
+
+        return view('users.pages.home',compact('posts'));
+//         return view('users.pages.home');
     }
 }
